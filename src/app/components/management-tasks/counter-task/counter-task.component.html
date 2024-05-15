@@ -1,0 +1,9 @@
+<div class="shadow p-3 rounded mb-4 d-flex justify-content-between">
+  <div
+    *ngFor="let task of TaskStatistique"
+    [ngClass]="task.status | statistiqueStyle"
+    style="width: 75px; height: 75px"
+  >
+    {{ task.count }}
+  </div>
+</div>

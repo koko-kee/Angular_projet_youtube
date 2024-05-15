@@ -1,0 +1,32 @@
+<div *ngFor="let task of tasks" class="shadow p-3 rounded mb-4">
+  <div class="d-flex justify-content-between">
+    <h2 class="text-start fw-bold fs-3">{{ task.title }}</h2>
+    <p>{{ task.created_at | date }}</p>
+  </div>
+  <p class="text-start text-secondary fs-6">
+    {{ task.description }}
+  </p>
+  <div class="d-flex justify-content-between">
+    <div>
+      <div>
+        <button
+          [ngClass]="statut | btnStyle"
+          [disabled]="task.status == statut"
+          *ngFor="let statut of statutType"
+          (click)="changeStatut(statut, task.id)"
+          class="btn btn-outline-primary"
+        >
+          {{ statut }}
+        </button>
+      </div>
+    </div>
+    <div>
+      <button (click)="updateTask(task)" class="btn-sm btn-primary">
+        Editer
+      </button>
+      <button (click)="remove(task.id)" class="btn-sm btn-danger">
+        Supprimer
+      </button>
+    </div>
+  </div>
+</div>

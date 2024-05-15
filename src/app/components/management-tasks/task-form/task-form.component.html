@@ -1,0 +1,57 @@
+<div class="shadow p-3 rounded">
+  <h1 class="text-center fs-2">Formulaire Tache</h1>
+  <form [formGroup]="taskForm" (ngSubmit)="createNewTask()">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Titre tache</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        formControlName="title"
+        id="exampleFormControlInput1"
+        placeholder="titre de la tache"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Slug</label>
+      <input
+        type="text"
+        formControlName="slug"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="champs desctiver"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">status</label>
+      <select formControlName="status" name="" id="" class="form-control">
+        <option value="Started">Started</option>
+        <option value="In progress">In progress</option>
+        <option value="Done">done</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Description</label
+      >
+      <textarea
+        formControlName="description"
+        class="form-control"
+        rows="2"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Deadline</label>
+      <input
+        type="date"
+        formControlName="deadline"
+        class="form-control"
+        id="exampleFormControlInput1"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">
+      {{ task != undefined ? "Editer" : "Creer une tache" }}
+    </button>
+  </form>
+</div>

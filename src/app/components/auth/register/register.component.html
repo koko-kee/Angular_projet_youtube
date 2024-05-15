@@ -1,0 +1,56 @@
+<div class="container mx-auto p-5 w-50">
+  <div class="shadow p-3">
+    <h1 class="text-center fs-2">Register</h1>
+    <form [formGroup]="RegisterForm" (ngSubmit)="register()">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">name</label>
+        <input
+          formControlName="name"
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Password</label>
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"
+          >confirmation Password</label
+        >
+        <input
+          formControlName="password_confirmation"
+          type="password"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <button
+        type="submit"
+        [disabled]="!RegisterForm.valid"
+        class="btn btn-primary"
+      >
+        S'incrire
+      </button>
+    </form>
+  </div>
+</div>
